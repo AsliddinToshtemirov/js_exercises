@@ -9,7 +9,15 @@
  * isStringEmpty(); => throws error "text must be defined"
  */
 function isStringEmpty(text) {
-  // Your code here
+  if (text === undefined) {
+    throw new Error("text must be defined");
+  }
+  
+  if (typeof text !== 'string') {
+    throw new Error("text must be a string");
+  }
+
+  return text.trim().length === 0;
 }
 
 /**
@@ -21,11 +29,15 @@ function isStringEmpty(text) {
  * truncateString('Hello World', 2); => 'He'
  * truncateString('Hello world'); => throws error "Please specify number of characters to extract"
  * truncateString(''); => throws error "text must have at least one character"
- */
-function truncateString(text, numberOfCharacters) {
-  // Your code here
+ */function truncateString(text, numberOfCharacters) {
+  if (text === undefined || text.length === 0) {
+    throw new Error("text must have at least one character");
+  }
+  if (numberOfCharacters === undefined) {
+    throw new Error("Please specify number of characters to extract");
+  }
+  return text.substring(0, numberOfCharacters);
 }
-
 /**
  * Write a function to create social media post hash tag
  * @param {String} text 
