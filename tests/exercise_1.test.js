@@ -20,7 +20,7 @@ describe('Exercise @1', () => {
     });
 
     it('isStringEmpty("   "); => true', () => {
-      expect(isStringEmpty('abc')).to.equal(true);
+      expect(isStringEmpty('   ')).to.equal(true);
     });
 
     it('isStringEmpty(); => throws error', () => {
